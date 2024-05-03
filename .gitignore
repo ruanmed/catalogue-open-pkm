@@ -7,3 +7,4 @@ vault/.dendron.cache.json
 node_modules
 
 .next
+.backup

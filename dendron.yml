@@ -16,15 +16,17 @@ commands:
     insertNoteIndex:
         enableMarker: false
     randomNote: {}
-    copyNoteLink: {}
+    copyNoteLink:
+        aliasMode: title
+    templateHierarchy: template
 workspace:
-    dendronVersion: 0.84.0
+    dendronVersion: 0.124.0
     vaults:
         -
             fsPath: vault
             remote:
                 type: git
-                url: 'git@github.com:dendronhq/catalogue-open-pkm.git'
+                url: git@github.com:dendronhq/catalogue-open-pkm.git
             name: pkm-docs
     journal:
         dailyDomain: daily
@@ -37,6 +39,7 @@ workspace:
         addBehavior: asOwnDomain
     graph:
         zoomSpeed: 1
+        createStub: false
     enableAutoCreateOnDefinition: false
     enableXVaultWikiLink: false
     enableRemoteVaultInit: true
@@ -64,13 +67,17 @@ workspace:
             L: low
         todoIntegration: false
         createTaskSelectionType: selection2link
+        taskCompleteStatus:
+            - done
+            - x
     enableUserTags: true
     enableHashTags: true
     enableEditorDecorations: true
+    enableFullHierarchyNoteTitle: false
+    enablePersistentHistory: false
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
-    enableMermaid: true
     enablePrettyRefs: false
     enableKatex: false
     automaticallyShowPreview: false
@@ -81,7 +88,6 @@ dev:
 publishing:
     enableFMTitle: true
     enableNoteTitleForLink: true
-    enableMermaid: true
     enablePrettyRefs: true
     enableKatex: false
     copyAssets: true
@@ -89,7 +95,7 @@ publishing:
         - pkm
     enableSiteLastModified: true
     siteRootDir: docs
-    siteUrl: 'https://pkm.dendron.so'
+    siteUrl: https://pkm.dendron.so
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
@@ -102,5 +108,7 @@ publishing:
         editLinkText: Edit this page on GitHub
         editBranch: main
         editViewMode: tree
-        editRepository: 'https://github.com/dendronhq/catalogue-open-pkm'
+        editRepository: https://github.com/dendronhq/catalogue-open-pkm
     enablePrettyLinks: true
+    enableTaskNotes: true
+    searchMode: lookup
